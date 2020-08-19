@@ -5,6 +5,9 @@ function render(catalog) {
     productsPage.render(catalog);
 }
 
+spinnerPage.render();
+
+
 let CATALOG = [];
 
 
@@ -12,8 +15,15 @@ fetch('https://gist.githubusercontent.com/helllrice/f3ed1fe5ff5eb0238a7b2a6e9975
     .then(res => res.json())
     .then(body => {
         CATALOG = body;
-        render(body);
+
+        setTimeout(function(){
+            spinnerPage.handleClear();
+            render(body);
+        }, 1000);
     })
     .catch(error => {
-        console.log(error);
+        spinnerPage.handleClear();
+        errorPage.render()
     });
+
+

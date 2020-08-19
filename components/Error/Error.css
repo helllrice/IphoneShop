@@ -1,0 +1,15 @@
+.error_message {
+    padding: 20px 40px;
+    text-align: center;
+    background-color: #f25b6b;
+    box-shadow: #d65c5c;
+    border-left: 7px solid  black;
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
